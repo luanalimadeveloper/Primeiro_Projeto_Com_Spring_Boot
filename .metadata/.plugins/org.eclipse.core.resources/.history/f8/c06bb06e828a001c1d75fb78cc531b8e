@@ -1,0 +1,24 @@
+package com.devsuperior.userdept.entities.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.devsuperior.userdept.entities.User;
+import com.devsuperior.userdept.repositories.UserRepository;
+
+@RestController /*Configura a classe para ser um crontrolador e responde por requisições*/
+@RequestMapping(value = "/users") /*Qual caminho esse controle vai responder*/
+public class UserController {
+	
+	@Autowired /*anotacao para que nao eu nao precise instacnciar obj new....*/
+	private UserRepository repository;
+	
+	/*Do banco de dados tem que buscar todos os usuarios*/
+	public List<User> findAll(){
+		List<User> result = repository.findAll();
+		return result;
+	}
+}

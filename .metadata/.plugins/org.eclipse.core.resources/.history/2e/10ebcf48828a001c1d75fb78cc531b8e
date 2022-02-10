@@ -1,0 +1,13 @@
+package com.devsuperior.userdept.entities.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController /*Configura a classe para ser um crontrolador e responde por requisições*/
+@RequestMapping(value = "/users") /*Qual caminho esse controle vai responder*/
+public class UserController {
+	
+	public List<User> findAll(){
+		
+	}
+}
